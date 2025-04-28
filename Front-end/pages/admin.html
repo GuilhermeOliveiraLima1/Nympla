@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body onload="onLoadPage()" class="class="dropdown" data-bs-theme="dark"">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-around w-100">
+        <a href="admin.html">
+            <img class="ms-3 me-3" src="../imgs/logo.png" alt="Logo">
+        </a>
+  
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <form class="d-flex me-3" role="search" onsubmit="return false">
+            <input id="searchInput" class="form-control me-lg-3" type="search" placeholder="Buscar" aria-label="Search">
+            <button id="search" class="btn btn-outline-primary" type="s">Pesquisar</button>
+          </form>
+          <h2 class="mb-0"></h2>
+  
+          <button type="button" class="btn btn-primary ms-auto me-1" onclick="logout()">Sair</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+      
+    <h1 class="d-none"></h1>
+
+    <div class="container mt-5">
+      <ul class="nav nav-tabs gap-0">
+        <li class="nav-item">
+            <h3 class="nav-link active rounded-top pe-3">
+                Eventos
+            </h3>
+        </li>
+      </ul>
+      
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-0" id="gridContainer">
+      </div>
+    </div>
+
+    <div class="modal fade" id="registeredModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Lista de Inscritos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body" id="registeredList">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+</html>
