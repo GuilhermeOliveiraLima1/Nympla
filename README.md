@@ -1,35 +1,70 @@
 # Projeto Nympla
 
-O projeto consiste em um sistema de gerenciamento de eventos e usuários semelhante ao site Sympla. O sistema irá possibilitar a inscrição em eventos, cadastro e login de usuários, autenticação e autorização, geração de comprovantes de inscrição, check-in de usuários, entre outras funcionalidades.
+O projeto consiste em um sistema de gerenciamento de eventos e usuários semelhante ao site Sympla. O sistema irá possibilitar a inscrição em eventos, cadastro e login de usuários, autenticação e autorização, entre outras funcionalidades.
 
-# Design
+## Design 
 
-Sugestão de design das principais telas do projeto.
+Design das principais telas do projeto.
 
-![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
 
-# Dev Log
+## funcionalidades
 
-**Aula 03 - 18/03 (terça)**
+- [x] Login
+- [x] Cadastro de usuários
+- [x] Listar eventos disponíveis 
+- [x] Buscar eventos
+- [x] Listar eventos cadastrados
+- [x] Fazer inscrição
+- [x] Cancelar inscrição
+- [x] Logout 
+- [x] Excluir evento
+- [x] Listar inscritos no evento
 
-- [x] Criação da pasta **repositories** e implementação das classes para acesso ao banco de dados postgres. Download da dependencia **dotenv** para gerenciar as informações de variáveis de ambiente.
-  - [x] Criação do PgDatabase.js
-  - [x] Criação do UserRepository.js
-  - [x] Criação da base de dados chamada **nympla** no PgAdmin
-  - [x] Criação da tabela **users** e inserido alguns usuários (sqls na pasta Database)
-  - [x] Implementação da funcionalidade de listar todos os usuários
-  - [x] Criação do arquivo **.env** que guarda a url de conexao do banco. **OBS:** o arquivo .env não é carregado para o github, devendo o aluno criar na basta Back-end do seu projeto local.
 
-**Aula 02 - 18/03 (terça)**
+## Endpoints
+```
+GET http://localhost:8080/user/all
+Listar todos os usuários
 
-- [x] Criação das pastas **entities** e **services**
-  - [x] Criação do User.js
-  - [x] Criação do UserService.js
-  - [x] Atualização do UserControler.js
+POST http://localhost:8080/user/register
+Registrar um novo usuário
 
-**Aula 01 - 17/03 (segunda)**
+POST http://localhost:8080/user/login
+Fazer login do usuário
 
-- [x] Definição da estrutura do projeto e download das dependências **express** e **pg**
-  - [x] Criação do Server.js
-  - [x] Criação do Routes.js
-  - [x] Criação do UserControler.js
+GET http://localhost:8080/event/all
+Listar todos os eventos
+
+GET http://localhost:8080/event/:search
+Buscar eventos por nome
+
+GET http://localhost:8080/subscription/all
+Listar todas as inscrições
+
+GET http://localhost:8080/subscription/:id
+Buscar inscrições por ID do usuário
+
+POST http://localhost:8080/subscription/create
+Criar uma nova inscrição
+
+DELETE http://localhost:8080/subscription/delete/
+Deletar uma inscrição
+
+POST http://localhost:8080/auth/profile
+Perfil do usuário autenticado
+
+POST http://localhost:8080/auth/admin
+Perfil do administrador autenticado
+
+GET http://localhost:8080/admin/subscriptions/:id
+Listar inscrições por ID do evento (administrador)
+
+DELETE http://localhost:8080/admin/event/delete/:id
+Deletar um evento (administrador)
+```
